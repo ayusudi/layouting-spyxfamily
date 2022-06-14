@@ -6,7 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NOTES</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap" rel="stylesheet">
   <style>
+    * {
+      font-family: 'Nunito', sans-serif;
+    }
+
+    body {
+      padding : 10px 20px;
+    }
     [id^="spoilercheck"] {
       visibility: hidden;
     }
@@ -41,22 +51,48 @@
       font-size: 1em;
       opacity: 1;
     }
+
+    pre code {
+      background-color: #eee;
+      border: 1px solid #999;
+      display: block;
+      padding: 15px
+    }
   </style>
 </head>
 
 <body>
+  <h1>
+    Lecture Test Driven Development
+    (TDD) with JEST & SUPERTEST
+  </h1>
+  <pre>
+    <code>
+    + What is Testing?
+    + What is TDD (Test Driven Development) ?
+    + How to use JEST?
+    + How to implementation TDD with JEST & SUPERTEST to REST API?
+    </code>
+  </pre>
+  <div >
+    <h2>Documentation</h2>
+    Jest <a href="https://jestjs.io/"> https://jestjs.io/</a>
+    <br>
+    Jest & Supertest  <a href="https://www.albertgao.xyz/2017/05/24/how-to-test-expressjs-with-jest-and-supertest/">https://www.albertgao.xyz/2017/05/24/how-to-test-expressjs-with-jest-and-supertest/ </a>
+  </div>
+  <br><br>
 
-  <h2>Highlight JEST Method</h2>
   <hr>
-
+  </hr>
+  <h1>Hightlight JEST</h1>
+  <link rel="stylesheet" href="style.css">
   <div>
     <input type="checkbox" id="spoilercheck1">
     <label for="spoilercheck1" id="spoilerlabel1">&raquo; test()</label>
     <div id="spoilerdiv1">
       <p style="color:tomato">test( <u>name</u>: string, <u>function callback</u>: process )</p>
       <p>Digunakan untuk mengeksekusi testing</p>
-      <p style="color:cyan">Jika terdapat proses yang asynchrounous maka membutuhkan <b style="color:yellow">done()</b>
-      </p>
+      <p style="color:cyan">Jika terdapat PROMISE maka membutuhkan <b style="color:yellow">done()</b></p>
     </div>
   </div>
   <div>
@@ -86,7 +122,7 @@
     <input type="checkbox" id="spoilercheck5">
     <label for="spoilercheck5" id="spoilerlabel5">&raquo; expect().METHOD()</label>
     <div id="spoilerdiv5">
-      <p>CHECK HERE <a href="https://jestjs.io/docs/expect">https://jestjs.io/docs/expect</a> </p>
+      <p>CHECK HERE https://jestjs.io/docs/expect </p>
     </div>
   </div>
   <div>
@@ -111,20 +147,19 @@
   </div>
 
 
-
-  <h2>Highlight SUPERTEST</h2>
   <hr>
-  
-  high-level abstraction for testing HTTP
+  </hr>
+  <h1>Highlight SUPERTEST</h1>
+  </hr>
 
-  <a href="https://www.npmjs.com/package/supertest">https://www.npmjs.com/package/supertest</a></br>
-  <a href="https://www.albertgao.xyz/2017/05/24/how-to-test-expressjs-with-jest-and-supertest/">https://www.albertgao.xyz/2017/05/24/how-to-test-expressjs-with-jest-and-supertest/</a>
+  <p> high-level abstraction for testing HTTP
+    <a href="https://www.npmjs.com/package/supertest">https://www.npmjs.com/package/supertest</a>
+  </p>
   </br>
-  </br>
+
   <div>
     <input type="checkbox" id="spoilercheck8">
     <label for="spoilercheck8" id="spoilerlabel8" style="background-color:black">👩‍💻</label>
-    <br>
     <div id="spoilerdiv8">
       </br>
       <pre>Yang akan di test REST API, yang kita buat dengan Express.</br>Beberapa hal yang perlu "ingat" dalam membuat REST API :
@@ -136,7 +171,7 @@
   - Failed Case~
   </br>Selama ini kita berkerja di enviorment "development"
   </pre>
-  <pre>Nanti kita coba2 error yang shock terapi 
+      <pre>Nanti kita coba2 error yang shock terapi 
   - Enviorment test
   - detectOpenHandles
     "script": {
@@ -148,58 +183,73 @@
   </div>
 
 
+
   <div>
-    <input type="checkbox" id="spoilercheck9">
-    <label for="spoilercheck9" id="spoilerlabel9">&raquo; request(app).get() </label>
-    <div id="spoilerdiv9">
+    <input type="checkbox" id="spoilercheckZ">
+    <label for="spoilercheckZ" id="spoilerlabelZ">&raquo; request(app) </label>
+    <div id="spoilerdivZ">
       <p style="color:tomato">request( <u>app</u> ).get( <u>routes</u>: string )</p>
       <p>Untuk memanggil http method</p>
-      <ul>
-        <li>request(app).post(routes)</li>
-        <li>request(app).put(routes)</li>
-        <li>etc</li>
-      </ul>
+      <p>request(app).post(routes:string)</p>
+      <p>request(app).put(routes:string)</p>
+      <p>etc</p>
     </div>
   </div>
-
-
-  <div>
-    <input type="checkbox" id="spoilercheckB">
-    <label for="spoilercheckB" id="spoilerlabelB">&raquo; .set(?) </label>
-  </div>
-  <div>
-    <input type="checkbox" id="spoilercheckB">
-    <label for="spoilercheckB" id="spoilerlabelB">&raquo; .send(?) </label>
-  </div>
-  <div>
-    <input type="checkbox" id="spoilercheckB">
-    <label for="spoilercheckB" id="spoilerlabelB">&raquo; .query(?) </label>
-  </div>
-
-  </br>
-  </br>
 
   <div>
     <input type="checkbox" id="spoilercheck0">
-    <label for="spoilercheck0" id="spoilerlabel0" style="background-color:red">-</label>
+    <label for="spoilercheck0" id="spoilerlabel0">MUST TO KNOW :</label>
+    <label>.set(?)</label>
+    <label>.send(?)</label>
+    <label>.query(?)</label>
     <div id="spoilerdiv0">
-
-      https://visionmedia.github.io/superagent/#get-requests.  
-
-      https://www.albertgao.xyz/2017/05/24/how-to-test-expressjs-with-jest-and-supertest/
-
       Contoh dengan method POST / GET
       <ul>
-        <li>request(app).post("/users").set( access_token, "abscdfew" ) : REQ.HEAERS</li>
-        <li>request(app).post("/login").send({username: "ayu", password: "waw"}) : REQ.BODY</li>
-        <li>request(app).get("/students").query({ name: 'ayu' }) : REQ.QUERY</li>
+        <li>request(app).post("/users")<b style="color:pink">.set( access_token, "abscdfew" )</b> => <b
+            style="color:pink">REQ.HEADERS</b>
+        </li>
+        <li>request(app).post("/login")<b style="color:gold">.send({username: "ayu", password: "waw"})</b>
+          => <b style="color:gold"> REQ.BODY</b></li>
+        <li>request(app).get("/students")<b style="color:cyan">.query({name: "ayu"})</b>
+          => <b style="color:cyan">REQ.QUERY, GET /students?name=ayu</b></li>
       </ul>
     </div>
   </div>
 
+  <b>Check =></b>
+  <a style="color:royalblue"
+    href="https://github.com/withered-flowers/education-testing-apps#demo">education-testing-apps @withered-flowers</a>
   </br>
-  </br>
-  <img src="./tdd.png" />
+  <br>
+  <hr>
+  </hr>
+  <h1>Reminder of TDD</h1>
+
+  </hr>
+  <div style="display: flex;">
+    <img src="tdd.png" style="width:600px; object-fit: contain;">
+    <div>
+      <h2 style="color:green">Do:</h2>
+      <pre color:green>
+      register -> red, green, refactor
+      kemudian
+      login -> red, green, refactor 
+    </pre>
+
+      <h2 style="color:red">Don't:</h2>
+      <pre>
+      register -> red
+      login -> red
+      kemudian
+      register -> red, green
+      login -> red, green
+      dst.
+    </pre>
+
+    </div>
+
+  </div>
+
 </body>
 
 </html>
