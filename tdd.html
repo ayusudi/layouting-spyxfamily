@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOTES</title>
+  <style>
+    [id^="spoilercheck"] {
+      visibility: hidden;
+    }
+
+    [id^="spoilerlabel"] {
+      color: white;
+      background-color: orange;
+      font-size: 1em;
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    [id^="spoilerlabel"]:hover {
+      background-color: orangered;
+    }
+
+    [id^="spoilerdiv"] {
+      color: white;
+      background-color: rgb(37, 32, 74);
+      padding: 2.5px;
+      height: 0;
+      font-size: 0;
+      margin: 10px 20px;
+      padding-left: 10px;
+      transition: 500ms;
+      opacity: 0;
+      border-radius: 15px;
+    }
+
+    [id^="spoilercheck"]:checked~[id^="spoilerdiv"] {
+      height: auto;
+      font-size: 1em;
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Highlight JEST Method</h2>
+  <hr>
+
+  <div>
+    <input type="checkbox" id="spoilercheck1">
+    <label for="spoilercheck1" id="spoilerlabel1">&raquo; test()</label>
+    <div id="spoilerdiv1">
+      <p style="color:tomato">test( <u>name</u>: string, <u>function callback</u>: process )</p>
+      <p>Digunakan untuk mengeksekusi testing</p>
+      <p style="color:cyan">Jika terdapat proses yang asynchrounous maka membutuhkan <b style="color:yellow">done()</b>
+      </p>
+    </div>
+  </div>
+  <div>
+    <input type="checkbox" id="spoilercheck2">
+    <label for="spoilercheck2" id="spoilerlabel2">&raquo; test.only()</label>
+    <div id="spoilerdiv2">
+      <p>untuk menjalankan 1 test / lebih, skip test lainnya yang tidak menggunakan only.</p>
+    </div>
+  </div>
+  <div>
+    <input type="checkbox" id="spoilercheck3">
+    <label for="spoilercheck3" id="spoilerlabel3">&raquo; expect()</label>
+    <div id="spoilerdiv7">
+      <p style="color:tomato">expect( <u>value</u>: any )</p>
+      <p>melakukan kecocokan "matcher" terhadap hasil </p>
+    </div>
+  </div>
+  <div>
+    <input type="checkbox" id="spoilercheck4">
+    <label for="spoilercheck4" id="spoilerlabel4">&raquo; expect().toBe()</label>
+    <div id="spoilerdiv4">
+      <p style="color:tomato">expect( <u>received</u>: any ).toBe( <u>expected</u>: string, number, boolean )</p>
+      <p>expected value => STRICT value `===` </p>
+    </div>
+  </div>
+  <div>
+    <input type="checkbox" id="spoilercheck5">
+    <label for="spoilercheck5" id="spoilerlabel5">&raquo; expect().METHOD()</label>
+    <div id="spoilerdiv5">
+      <p>CHECK HERE <a href="https://jestjs.io/docs/expect">https://jestjs.io/docs/expect</a> </p>
+    </div>
+  </div>
+  <div>
+    <input type="checkbox" id="spoilercheck6">
+    <label for="spoilercheck6" id="spoilerlabel6">&raquo; beforeAll() / afterAll()</label>
+    <div id="spoilerdiv6">
+      <p>Semacam hooks</p>
+      <ul>
+        <li>beforeAll()</li>
+        <li>beforeEach()</li>
+        <li>afterEach()</li>
+        <li>aterfAll()</li>
+      </ul>
+      <p>TBA (To be add... ) </p>
+    </div>
+    <input type="checkbox" id="spoilercheck7">
+    <label for="spoilercheck7" id="spoilerlabel7">&raquo; describe()</label>
+    <div id="spoilerdiv7">
+      <p>TBA (To be add... ) </p>
+      <p>Lanjut bahas supertest dulu yaa 🦊</p>
+    </div>
+  </div>
+
+
+
+  <h2>Highlight SUPERTEST</h2>
+  <hr>
+  
+  high-level abstraction for testing HTTP
+
+  <a href="https://www.npmjs.com/package/supertest">https://www.npmjs.com/package/supertest</a>
+  </br>
+  </br>
+  <div>
+    <input type="checkbox" id="spoilercheck8">
+    <label for="spoilercheck8" id="spoilerlabel8" style="background-color:black">👩‍💻</label>
+    <br>
+    <div id="spoilerdiv8">
+      </br>
+      <pre>Yang akan di test REST API, yang kita buat dengan Express.</br>Beberapa hal yang perlu "ingat" dalam membuat REST API :
+  - Memiliki Process yg Async
+  - HTTP Method 
+  - Request 
+  - Response 
+  - Status Code 
+  - Failed Case~
+  </br>Selama ini kita berkerja di enviorment "development"
+  </pre>
+      <pre>Nanti kita coba2 error yang shock terapi 
+  - Enviorment test
+  - detectOpenHandles
+    "script": {
+      "test" : "npx jest --forceExit --verbose --detectOpenHandles --runInBand"
+    }
+  - TCPWRAP
+  </pre>
+    </div>
+  </div>
+
+
+  <div>
+    <input type="checkbox" id="spoilercheck9">
+    <label for="spoilercheck9" id="spoilerlabel9">&raquo; request(app).get() </label>
+    <div id="spoilerdiv9">
+      <p style="color:tomato">request( <u>app</u> ).get( <u>routes</u>: string )</p>
+      <p>Untuk memanggil http method</p>
+      <ul>
+        <li>request(app).post(routes)</li>
+        <li>request(app).put(routes)</li>
+        <li>etc</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div>
+    <input type="checkbox" id="spoilercheckB">
+    <label for="spoilercheckB" id="spoilerlabelB">&raquo; .set(?) </label>
+  </div>
+  <div>
+    <input type="checkbox" id="spoilercheckB">
+    <label for="spoilercheckB" id="spoilerlabelB">&raquo; .send(?) </label>
+  </div>
+  <div>
+    <input type="checkbox" id="spoilercheckB">
+    <label for="spoilercheckB" id="spoilerlabelB">&raquo; .query(?) </label>
+  </div>
+
+  </br>
+  </br>
+
+  <div>
+    <input type="checkbox" id="spoilercheck0">
+    <label for="spoilercheck0" id="spoilerlabel0" style="background-color:red">-</label>
+    <div id="spoilerdiv0">
+      https://visionmedia.github.io/superagent/#get-requests
+      Contoh dengan method POST / GET
+      <ul>
+        <li>request(app).post("/users").set( access_token, "abscdfew" ) : REQ.HEAERS</li>
+        <li>request(app).post("/login").send({username: "ayu", password: "waw"}) : REQ.BODY</li>
+        <li>request(app).get("/students").query({ name: 'ayu' }) : REQ.QUERY</li>
+      </ul>
+    </div>
+  </div>
+
+  </br>
+  </br>
+  <img src="./tdd.png" />
+</body>
+
+</html>
